@@ -9,7 +9,7 @@
  * One click on the master switch returns the stock UI (every layer is an
  * effect, disposed on flip).
  */
-import type { ClientContext } from '@deepseek-ai/dsh-client-runtime/client'
+import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type { BoundActions } from '@deepseek-ai/dsh-client-ui-slots'
 // Type-only: pulls the `settings.plugin.item` SlotMap merge.
 import type {} from '@deepseek-ai/dsh-client-ui-settings-plugins/client'
@@ -25,8 +25,8 @@ import { AquaLayer } from './theme-layer.ts'
 import './aqua.module.css'
 import './fonts.module.css'
 
-/** Required services: theme override stack plus the settings-card surfaces. */
-export const inject = ['theme', 'slots', 'locale']
+/** Required services: theme override stack, settings scope, and the settings-card surfaces. */
+export const inject = ['theme', 'slots', 'locale', 'settingsScope']
 
 /**
  * Client plugin body.
@@ -38,6 +38,12 @@ export function apply(ctx: ClientContext): void {
   // The layer owns its lifecycle: enable flag, token stack, and CSS attribute
   // are all effects released on disable/dispose.
   const layer = new AquaLayer(ctx)
+
+  // Register the `settings.aqua` namespace with the Host so the new
+  // namespace-driven Configurable Plugins tab (`settings.plugin.item` is now a
+  // keyed slot) serves our master card. Bind owns its lifecycle through an
+  // internal effect, so no disposer is needed here.
+  ctx.settingsScope.bind({ namespace: NS })
 
   // Two store mirrors of the same layer state: one for the Plugins card
   // (master switch) and one for the General section's Appearance row (knobs).
@@ -96,6 +102,10 @@ export function apply(ctx: ClientContext): void {
     appearanceBound = actions
     sync()
     return {
+      setEnabled: (enabled) => {
+        layer.setEnabled(enabled)
+        sync()
+      },
       setMode: (mode) => {
         layer.setMode(mode)
         sync()
@@ -171,10 +181,11 @@ export function apply(ctx: ClientContext): void {
   }
 
   // Master switch card in the Plugins configurable tab.
+  // `settings.plugin.item` is a keyed slot declared by the configurable plugins
+  // tab. Wait for that parent slot before registering the Aqua card.
   ctx.slots.inject('settings.plugin.item', () => ctx.slots.register({
     name: 'settings.plugin.item',
-    id: 'aqua',
-    order: 5,
+    key: NS,
     store: pluginStore,
     locale: NS,
     inject: pluginInjected,

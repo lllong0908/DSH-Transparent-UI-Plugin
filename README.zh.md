@@ -2,7 +2,19 @@
 
 [English](README.md) | 中文
 
-# 注意⚠️⚠️⚠️（务必仔细阅读）：随着DSH版本更新，本人因学业繁忙无法及时为该插件适配新的API，请自行使用其他agent更换或修理，以免在安装该插件时出现崩溃问题
+## DSH 0.1.5-rc.2 兼容更新
+
+本仓库是适配 **DeepSeek Harness `0.1.5-rc.2`** 的兼容更新版。已迁移旧的客户端运行时依赖到 `@deepseek-ai/dsh-client-store`，补齐当前版本要求的 `settingsScope` 与 keyed 设置槽位 API，并已在真实 DSH Web 实例中完成加载验证。
+
+### 来源与署名
+
+- 原项目：[du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
+- 此前 DSH 适配：[WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- DSH 0.1.5-rc.2 兼容更新：[lllong0908/DSH-Transparent-UI-Plugin](https://github.com/lllong0908/DSH-Transparent-UI-Plugin)
+
+二次分发时请保留原项目和此前适配者的署名。完整说明见 [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md)。
+
+> 下文的 npm 命令指向原 npm 发布版，不是本兼容更新仓库。安装本仓库请使用 GitHub 或本地源码安装方式。
 
 Aqua 是一层高自由度的玻璃质感主题，套在 DeepSeek Harness 网页端。顶栏、侧边栏、输入框、统计行、轨迹视图都成了磨砂玻璃片,你还可以添加视频和图片作为背景。关掉开关就回到原生界面，不改 DSH 任何一行源码。
 
@@ -41,7 +53,7 @@ dsh plugin --profile web add dsh-client-ui-aqua
 **Windows（一条命令）：**
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.com/WYH66666666/DSH-Transparent-UI-Plugin/raw/main/install.ps1' -OutFile install.ps1; .\install.ps1"
+powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.com/lllong0908/DSH-Transparent-UI-Plugin/raw/main/install.ps1' -OutFile install.ps1; .\install.ps1"
 ```
 
 默认安装**最新发布版**。脚本会把插件链接进 profile 的 `node_modules`，并在 `cordis.patch.yml` 里登记 `ui-aqua`（幂等，重复跑不会重复登记）。
@@ -49,14 +61,14 @@ powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.c
 指定版本或跟随开发分支：
 
 ```powershell
-.\install.ps1 -Version 'v1.1.0'   # 指定某个发布版
+.\install.ps1 -Version 'v1.3.1'   # 指定某个发布版
 .\install.ps1 -Version 'main'     # 开发分支
 ```
 
 **macOS / Linux（手动，三步）：**
 
 ```sh
-git clone --depth 1 --branch v1.1.0 https://github.com/WYH66666666/DSH-Transparent-UI-Plugin.git
+git clone --depth 1 --branch v1.3.1 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
 ln -s "$PWD/DSH" "$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-client-ui-aqua"
 ```
 

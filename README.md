@@ -2,7 +2,19 @@
 
 English | [中文](README.zh.md)
 
-# Notice ⚠️: As DSH has been updated, I am unable to promptly update the plugin with the new APIdue to my academic commitments. Please use an alternative agent to replace or repair it yourself to avoid crashes when installing this plugin.
+## DSH 0.1.5-rc.2 compatibility update
+
+This repository is a compatibility fork updated for **DeepSeek Harness `0.1.5-rc.2`**. It migrates the old client runtime import to `@deepseek-ai/dsh-client-store`, restores the current `settingsScope` and keyed settings-slot API, and has been verified against a live DSH Web instance.
+
+### Attribution
+
+- Original project: [du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
+- Prior DSH adaptation: [WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- DSH 0.1.5-rc.2 compatibility update: [lllong0908/DSH-Transparent-UI-Plugin](https://github.com/lllong0908/DSH-Transparent-UI-Plugin)
+
+Please keep the original project and prior adaptation credits when redistributing this work. See [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md) for the full notice.
+
+> The npm command below points to the original npm release and is not the source of this compatibility update. For this fork, use the GitHub/local-source installation instructions.
 
 
 Aqua is a highly customizable glassmorphism theme for the DeepSeek Harness web UI. The header, sidebar, composer, stats line, and trajectory view all become panes of frosted glass. you can put video for wallpaper and Switch it off and the stock UI comes back exactly, with no source changes to DSH itself.
@@ -42,7 +54,7 @@ No npm account and no git needed (falls back to a plain zip download).
 **Windows (one command):**
 
 ```powershell
-powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.com/WYH66666666/DSH-Transparent-UI-Plugin/raw/main/install.ps1' -OutFile install.ps1; .\install.ps1"
+powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.com/lllong0908/DSH-Transparent-UI-Plugin/raw/main/install.ps1' -OutFile install.ps1; .\install.ps1"
 ```
 
 Installs the **latest release** by default. The script links the plugin into the profile's `node_modules` and registers `ui-aqua` in `cordis.patch.yml` (idempotent — safe to run again).
@@ -50,14 +62,14 @@ Installs the **latest release** by default. The script links the plugin into the
 Pin a version or track the dev branch:
 
 ```powershell
-.\install.ps1 -Version 'v1.1.0'   # a specific release
+.\install.ps1 -Version 'v1.3.1'   # a specific release
 .\install.ps1 -Version 'main'     # the development branch
 ```
 
 **macOS / Linux (manual, three steps):**
 
 ```sh
-git clone --depth 1 --branch v1.1.0 https://github.com/WYH66666666/DSH-Transparent-UI-Plugin.git
+git clone --depth 1 --branch v1.3.1 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
 ln -s "$PWD/DSH" "$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-client-ui-aqua"
 ```
 

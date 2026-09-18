@@ -1,12 +1,12 @@
-# Aqua installer (Windows) - BACKUP method. The recommended install is the
-# npm one-liner (no account, no git, no manual steps, all platforms):
+# Aqua installer (Windows) - DSH 0.1.5-rc.2 compatibility fork. This local
+# source mode is the recommended installation path for this fork:
 #
-#   dsh plugin --profile web add dsh-client-ui-aqua
+#   .\install.ps1 -Source '<repository path>' -Profile web
 #
-# This script is the GitHub fallback: no npm, no git required.
+# The script can also download this fork's latest release directly:
 #
 # One command (from any directory):
-#   powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.com/WYH66666666/DSH-Transparent-UI-Plugin/raw/main/install.ps1' -OutFile install.ps1; .\install.ps1"
+#   powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.com/lllong0908/DSH-Transparent-UI-Plugin/raw/main/install.ps1' -OutFile install.ps1; .\install.ps1"
 #
 # It does three things:
 #   1. get the repo (git clone, or plain zip download when git is missing)
@@ -20,7 +20,7 @@
 # one; pass a URL or local path to install another clone.
 
 param(
-    [string]$Source = 'https://github.com/WYH66666666/DSH-Transparent-UI-Plugin',
+    [string]$Source = 'https://github.com/lllong0908/DSH-Transparent-UI-Plugin',
     [string]$Version = 'latest',
     [string]$DshHome = $env:DSH_HOME,
     [string]$Profile = 'web'

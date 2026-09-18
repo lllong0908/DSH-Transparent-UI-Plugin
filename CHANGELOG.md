@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.1 - DSH 0.1.5-rc.2 compatibility
+
+- Migrated the client `defineStore` import from the removed `@deepseek-ai/dsh-client-runtime/client` module to the current `@deepseek-ai/dsh-client-store` platform seed.
+- Restored the current keyed `settings.plugin.item` registration and `ctx.settingsScope.bind({ namespace: 'settings.aqua' })` flow.
+- Registered `settings.plugin.item` and `settings.general.item` through `ctx.slots.inject(...)` so parent slots are available before Aqua registers.
+- Updated package metadata and TypeScript declarations for DSH `0.1.5-rc.2`.
+- Verified against a live DSH Web instance: no plugin-load error, Aqua CSS injected, and `data-dsh-aqua` / `data-dsh-float` enabled.
+- Preserved attribution to the original project by `du-u-uck` and the prior DSH adaptation by `WYH66666666`.
+
 ## v1.3.0
 
 - 视频壁纸全面升级：浏览器原生解码、无进度条、循环播放、铺满裁剪，窗口缩放实时自适应
