@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.3.4 - visible contributors
+
+- Added a fixed `CONTRIBUTORS.md` list so attribution remains visible even while GitHub's automatic contributor widget is delayed or empty on a newly created fork.
+- Added `imccyu` to the attribution list as a major contributor to the original project.
+- Linked the contributor list from both READMEs.
+- No runtime code changes in this release.
+
 ## v1.3.3 - npm install warning
 
 - Documented that `dsh plugin --profile web add dsh-client-ui-aqua` installs the old npm package `1.3.1`, not this `DSH 0.1.5-rc.2` compatibility fork.

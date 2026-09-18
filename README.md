@@ -9,10 +9,11 @@ This repository is a compatibility fork updated for **DeepSeek Harness `0.1.5-rc
 ### Attribution
 
 - Original project: [WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- Original contributor: [imccyu](https://github.com/imccyu)
 - Prior DSH adaptation: [du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
 - DSH 0.1.5-rc.2 compatibility update: [lllong0908/DSH-Transparent-UI-Plugin](https://github.com/lllong0908/DSH-Transparent-UI-Plugin)
 
-Please keep the original project and prior adaptation credits when redistributing this work. See [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md) for the full notice.
+Please keep the original project and prior adaptation credits when redistributing this work. See [CONTRIBUTORS.md](CONTRIBUTORS.md) for the fixed contributor list and [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md) for the full notice.
 
 > [!WARNING]
 > `dsh plugin --profile web add dsh-client-ui-aqua` does **not** install this compatibility update. It downloads the old npm package `dsh-client-ui-aqua@1.3.1`, which still imports the removed `@deepseek-ai/dsh-client-runtime/client` module and fails on `DSH 0.1.5-rc.2`. Use the GitHub installer or local-source installation below.

@@ -9,10 +9,11 @@
 ### 来源与署名
 
 - 原项目：[WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- 原项目贡献者：[imccyu](https://github.com/imccyu)
 - 此前 DSH 适配：[du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
 - DSH 0.1.5-rc.2 兼容更新：[lllong0908/DSH-Transparent-UI-Plugin](https://github.com/lllong0908/DSH-Transparent-UI-Plugin)
 
-二次分发时请保留原项目和此前适配者的署名。完整说明见 [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md)。
+二次分发时请保留原项目和此前适配者的署名。固定贡献者列表见 [CONTRIBUTORS.md](CONTRIBUTORS.md)，完整说明见 [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md)。
 
 > [!WARNING]
 > `dsh plugin --profile web add dsh-client-ui-aqua` **不会**安装本兼容更新。该命令会下载旧的 npm 包 `dsh-client-ui-aqua@1.3.1`，其中仍然引用已被 `DSH 0.1.5-rc.2` 移除的 `@deepseek-ai/dsh-client-runtime/client`，会导致模块加载失败。请使用下方的 GitHub 安装器或本地源码安装方式。
