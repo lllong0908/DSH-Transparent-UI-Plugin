@@ -8,8 +8,8 @@ This repository is a compatibility fork updated for **DeepSeek Harness `0.1.5-rc
 
 ### Attribution
 
-- Original project: [du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
-- Prior DSH adaptation: [WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- Original project: [WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- Prior DSH adaptation: [du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
 - DSH 0.1.5-rc.2 compatibility update: [lllong0908/DSH-Transparent-UI-Plugin](https://github.com/lllong0908/DSH-Transparent-UI-Plugin)
 
 Please keep the original project and prior adaptation credits when redistributing this work. See [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md) for the full notice.
@@ -62,14 +62,14 @@ Installs the **latest release** by default. The script links the plugin into the
 Pin a version or track the dev branch:
 
 ```powershell
-.\install.ps1 -Version 'v1.3.1'   # a specific release
+.\install.ps1 -Version 'v1.3.2'   # a specific release
 .\install.ps1 -Version 'main'     # the development branch
 ```
 
 **macOS / Linux (manual, three steps):**
 
 ```sh
-git clone --depth 1 --branch v1.3.1 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
+git clone --depth 1 --branch v1.3.2 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
 ln -s "$PWD/DSH" "$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-client-ui-aqua"
 ```
 

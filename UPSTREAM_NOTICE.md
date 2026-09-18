@@ -4,14 +4,14 @@ This repository is a compatibility update of **DSH-Transparent-UI-Plugin**.
 
 ## Original project
 
-- Author: `du-u-uck`
-- Repository: https://github.com/du-u-uck/DSH-Transparent-UI-Plugin
+- Author: `WYH66666666`
+- Repository: https://github.com/WYH66666666/DSH-Transparent-UI-Plugin
 - License: GNU Affero General Public License v3.0
 
 ## Prior DSH adaptation
 
-- Author: `WYH66666666`
-- Repository: https://github.com/WYH66666666/DSH-Transparent-UI-Plugin
+- Author: `du-u-uck`
+- Repository: https://github.com/du-u-uck/DSH-Transparent-UI-Plugin
 
 ## Compatibility update in this repository
 

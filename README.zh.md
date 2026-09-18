@@ -8,8 +8,8 @@
 
 ### 来源与署名
 
-- 原项目：[du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
-- 此前 DSH 适配：[WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- 原项目：[WYH66666666/DSH-Transparent-UI-Plugin](https://github.com/WYH66666666/DSH-Transparent-UI-Plugin)
+- 此前 DSH 适配：[du-u-uck/DSH-Transparent-UI-Plugin](https://github.com/du-u-uck/DSH-Transparent-UI-Plugin)
 - DSH 0.1.5-rc.2 兼容更新：[lllong0908/DSH-Transparent-UI-Plugin](https://github.com/lllong0908/DSH-Transparent-UI-Plugin)
 
 二次分发时请保留原项目和此前适配者的署名。完整说明见 [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md)。
@@ -61,14 +61,14 @@ powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.c
 指定版本或跟随开发分支：
 
 ```powershell
-.\install.ps1 -Version 'v1.3.1'   # 指定某个发布版
+.\install.ps1 -Version 'v1.3.2'   # 指定某个发布版
 .\install.ps1 -Version 'main'     # 开发分支
 ```
 
 **macOS / Linux（手动，三步）：**
 
 ```sh
-git clone --depth 1 --branch v1.3.1 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
+git clone --depth 1 --branch v1.3.2 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
 ln -s "$PWD/DSH" "$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-client-ui-aqua"
 ```
 
