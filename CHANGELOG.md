@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.3 - npm install warning
+
+- Documented that `dsh plugin --profile web add dsh-client-ui-aqua` installs the old npm package `1.3.1`, not this `DSH 0.1.5-rc.2` compatibility fork.
+- Added the failure reason, removal command, and the supported GitHub/local-source installation path to both READMEs and `UPSTREAM_NOTICE.md`.
+- No runtime code changes in this release.
+
 ## v1.3.2 - Attribution correction
 
 - Corrected the upstream attribution order: `WYH66666666/DSH-Transparent-UI-Plugin` is the original project, and `du-u-uck/DSH-Transparent-UI-Plugin` is the prior DSH adaptation.

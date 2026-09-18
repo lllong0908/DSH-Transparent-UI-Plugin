@@ -27,4 +27,14 @@ This repository is a compatibility update of **DSH-Transparent-UI-Plugin**.
 - Registered settings surfaces with `ctx.slots.inject(...)`.
 - Updated package metadata and generated type declarations.
 
+## npm package separation
+
+The npm package `dsh-client-ui-aqua@1.3.1` is published from the original upstream repository and is not the `DSH 0.1.5-rc.2` compatibility build in this fork. The command:
+
+```sh
+dsh plugin --profile web add dsh-client-ui-aqua
+```
+
+therefore installs the old package and can fail with a missing `@deepseek-ai/dsh-client-runtime/client` module. Use the GitHub installer or local-source installation from this repository instead.
+
 This repository remains distributed under the AGPL-3.0 license included in `LICENSE`. The upstream authorship notices must not be removed from redistributed copies.

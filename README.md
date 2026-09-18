@@ -14,7 +14,8 @@ This repository is a compatibility fork updated for **DeepSeek Harness `0.1.5-rc
 
 Please keep the original project and prior adaptation credits when redistributing this work. See [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md) for the full notice.
 
-> The npm command below points to the original npm release and is not the source of this compatibility update. For this fork, use the GitHub/local-source installation instructions.
+> [!WARNING]
+> `dsh plugin --profile web add dsh-client-ui-aqua` does **not** install this compatibility update. It downloads the old npm package `dsh-client-ui-aqua@1.3.1`, which still imports the removed `@deepseek-ai/dsh-client-runtime/client` module and fails on `DSH 0.1.5-rc.2`. Use the GitHub installer or local-source installation below.
 
 
 Aqua is a highly customizable glassmorphism theme for the DeepSeek Harness web UI. The header, sidebar, composer, stats line, and trajectory view all become panes of frosted glass. you can put video for wallpaper and Switch it off and the stock UI comes back exactly, with no source changes to DSH itself.
@@ -39,15 +40,7 @@ Aqua is a highly customizable glassmorphism theme for the DeepSeek Harness web U
 
 ## Installation
 
-### Option 1: npm one-liner (recommended)
-
-```sh
-dsh plugin --profile web add dsh-client-ui-aqua
-```
-
-Installs the latest version from npm and registers it as a profile plugin layer (`dsh.bundle` patch) — works on every platform. Reload the web UI and it is on.
-
-### Option 2: GitHub installer (fallback)
+### Recommended: GitHub installer
 
 No npm account and no git needed (falls back to a plain zip download).
 
@@ -57,19 +50,19 @@ No npm account and no git needed (falls back to a plain zip download).
 powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.com/lllong0908/DSH-Transparent-UI-Plugin/raw/main/install.ps1' -OutFile install.ps1; .\install.ps1"
 ```
 
-Installs the **latest release** by default. The script links the plugin into the profile's `node_modules` and registers `ui-aqua` in `cordis.patch.yml` (idempotent — safe to run again).
+Installs the **latest release** by default. The script links the plugin into the profile's `node_modules` and registers `ui-aqua` in `cordis.patch.yml` (idempotent - safe to run again).
 
 Pin a version or track the dev branch:
 
 ```powershell
-.\install.ps1 -Version 'v1.3.2'   # a specific release
+.\install.ps1 -Version 'v1.3.3'   # a specific release
 .\install.ps1 -Version 'main'     # the development branch
 ```
 
 **macOS / Linux (manual, three steps):**
 
 ```sh
-git clone --depth 1 --branch v1.3.2 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
+git clone --depth 1 --branch v1.3.3 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
 ln -s "$PWD/DSH" "$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-client-ui-aqua"
 ```
 
@@ -79,6 +72,20 @@ then append to `$DSH_HOME/profiles/web/cordis.patch.yml`:
 - insert:
     - id: ui-aqua
       name: '@deepseek-ai/dsh-client-ui-aqua'
+```
+
+### Not supported: npm one-liner
+
+```sh
+dsh plugin --profile web add dsh-client-ui-aqua
+```
+
+The npm registry currently serves `dsh-client-ui-aqua@1.3.1` from the original upstream repository. That package is not the `DSH 0.1.5-rc.2` compatibility build and will produce a module-table/import error.
+
+If it was already installed, remove it before installing this fork:
+
+```powershell
+dsh plugin --profile web remove dsh-client-ui-aqua
 ```
 
 ## Usage

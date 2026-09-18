@@ -14,7 +14,8 @@
 
 二次分发时请保留原项目和此前适配者的署名。完整说明见 [UPSTREAM_NOTICE.md](UPSTREAM_NOTICE.md)。
 
-> 下文的 npm 命令指向原 npm 发布版，不是本兼容更新仓库。安装本仓库请使用 GitHub 或本地源码安装方式。
+> [!WARNING]
+> `dsh plugin --profile web add dsh-client-ui-aqua` **不会**安装本兼容更新。该命令会下载旧的 npm 包 `dsh-client-ui-aqua@1.3.1`，其中仍然引用已被 `DSH 0.1.5-rc.2` 移除的 `@deepseek-ai/dsh-client-runtime/client`，会导致模块加载失败。请使用下方的 GitHub 安装器或本地源码安装方式。
 
 Aqua 是一层高自由度的玻璃质感主题，套在 DeepSeek Harness 网页端。顶栏、侧边栏、输入框、统计行、轨迹视图都成了磨砂玻璃片,你还可以添加视频和图片作为背景。关掉开关就回到原生界面，不改 DSH 任何一行源码。
 
@@ -38,15 +39,7 @@ Aqua 是一层高自由度的玻璃质感主题，套在 DeepSeek Harness 网页
 
 ## 安装
 
-### 方式一：npm 一键安装（推荐）
-
-```sh
-dsh plugin --profile web add dsh-client-ui-aqua
-```
-
-从 npm 安装最新版，自动注册为 profile 插件层（`dsh.bundle` 补丁），所有平台通用。刷新 Web 界面即可。
-
-### 方式二：GitHub 安装器（备用）
+### 推荐：GitHub 安装器
 
 不需要 npm、不需要 git（自动退回 zip 下载）。
 
@@ -61,14 +54,14 @@ powershell -ExecutionPolicy Bypass -Command "Invoke-WebRequest 'https://github.c
 指定版本或跟随开发分支：
 
 ```powershell
-.\install.ps1 -Version 'v1.3.2'   # 指定某个发布版
+.\install.ps1 -Version 'v1.3.3'   # 指定某个发布版
 .\install.ps1 -Version 'main'     # 开发分支
 ```
 
 **macOS / Linux（手动，三步）：**
 
 ```sh
-git clone --depth 1 --branch v1.3.2 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
+git clone --depth 1 --branch v1.3.3 https://github.com/lllong0908/DSH-Transparent-UI-Plugin.git
 ln -s "$PWD/DSH" "$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-client-ui-aqua"
 ```
 
@@ -78,6 +71,20 @@ ln -s "$PWD/DSH" "$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-client-ui-aqu
 - insert:
     - id: ui-aqua
       name: '@deepseek-ai/dsh-client-ui-aqua'
+```
+
+### 不支持：npm 一键安装
+
+```sh
+dsh plugin --profile web add dsh-client-ui-aqua
+```
+
+npm 当前提供的是原上游仓库发布的 `dsh-client-ui-aqua@1.3.1`。它不是本仓库的 `DSH 0.1.5-rc.2` 兼容构建，会产生模块表/导入错误。
+
+如果已经执行过该命令，请先移除旧包，再安装本仓库：
+
+```powershell
+dsh plugin --profile web remove dsh-client-ui-aqua
 ```
 
 ## 使用
